@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-ctf",
+  "version": "1.0.0",
+  "description": "A simple CTF built in NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./NO-EDIT/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JerecTharen/NodeJS-CTF.git"
+  },
+  "keywords": [
+    "CTF",
+    "NodeJS",
+    "Express"
+  ],
+  "author": "JerecTharen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JerecTharen/NodeJS-CTF/issues"
+  },
+  "homepage": "https://github.com/JerecTharen/NodeJS-CTF#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
+  }
+}
