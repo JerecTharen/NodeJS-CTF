@@ -1,0 +1,18 @@
+html
+  head
+    link(rel='stylesheet' type='text/css' href='style.css')
+    title Beginner Node CTF
+  body
+    div#containsAll
+    h1 LOGIN
+      form(action='/login' method='post')
+        div.usernameField
+          label(for='username') Username
+          input(id='username' type='text' name='username')
+        div.passwordField
+          label(for='password') Password
+          input(id='password' name='password' type='password')
+        div.submitBTN
+          button#submitter(type='submit') SUBMIT
+    div.link
+      a(href='/') Home

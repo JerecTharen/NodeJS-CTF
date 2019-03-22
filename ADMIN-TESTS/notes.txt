@@ -1,0 +1,13 @@
+Vulnerabilities
+
+/flag path that prints flag
+
+Need a user login and some Vulnerabilities there
+
+XSS?
+
+Something to brute force
+
+Flag in the comments
+
+Have a script that writes the flag into the public folder

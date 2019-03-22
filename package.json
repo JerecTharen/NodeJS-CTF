@@ -4,8 +4,8 @@
   "description": "A simple CTF built in NodeJS",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./NO-EDIT/app.js"
+    "test": "jasmine ./ADMIN-TESTS/test.js",
+    "start": "nodemon ./NO-EDIT/app.js -L"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/JerecTharen/NodeJS-CTF#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "jasmine": "^3.3.1",
     "pug": "^2.0.3"
   }
 }

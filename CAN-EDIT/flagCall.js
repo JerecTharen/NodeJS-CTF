@@ -11,10 +11,15 @@ const path = require('path');
 
 module.exports = (req, resp) => {
     console.log('got flag');
-    let send;
-    let read = fs.readFile(path.join(__dirname, '../INIT-VARIABLES/flag.txt'), 'utf-8', (err, data)=>{
-      let send = data;
-      console.log(data);
-      resp.send(send);
+    // let send;
+    // let read = fs.readFile(path.join(__dirname, '../INIT-VARIABLES/flag.txt'), 'utf-8', (err, data)=>{
+    //   let send = data;
+    //   console.log(data);
+    //   resp.send(send);
+    // });
+    fs.readFile(path.join(__dirname, '../INIT-VARIABLES/flag.txt'), 'utf-8', (err, data)=>{
+      let flag = data;
+      resp.render('index', {flag: flag});
+      console.log('rendering flag');
     });
 };

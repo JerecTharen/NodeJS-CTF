@@ -1,0 +1,14 @@
+html
+  head
+    title Beginner Node CTF
+    link(rel='stylesheet' href='style.css' type='text/css')
+  body
+    div#containsAll
+      h1 Welcome CTF Players!
+      a(href='./login') Login
+      if flag
+        div.flag
+          include ../../CAN-EDIT/VIEWS/flag.pug
+      if comment
+        div.comment
+          include ../../CAN-EDIT/VIEWS/comment.pug
