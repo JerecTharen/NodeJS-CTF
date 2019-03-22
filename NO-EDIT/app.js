@@ -6,15 +6,17 @@ const port = require('../INIT-VARIABLES/port');
 
 
 //component imports
-const teamGetCalls = require('../CAN-EDIT/get-calls');
+const flagCall = require('../CAN-EDIT/flagCall');
+
+// app.use(teamGetCalls);
+
+app.get('/flag', flagCall);
 
 app.listen(port, ()=>{
     console.log(`Listening on port: ${port}`);
 });
 
-app.get('/flag', teamGetCalls(req, resp));
-
-module.exports = app;
+// module.exports = app;
 
 // var express = require('express');
 // var router = express.Router();
