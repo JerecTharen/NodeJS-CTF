@@ -34,8 +34,21 @@ app.get('/', (req, resp)=>{
   resp.render('index');
 });
 
-app.get('/login', loginUser);
+app.get('/loginUser', loginUser);
 
+app.post('/checker', (req, resp)=>{
+  console.log(req.body);
+  if(password.contains(req.body.password) || 'password'.contains(req.body.password)){
+    resp.send('true');
+  }
+  else{
+    resp.send('false');
+  }
+});
+
+app.get('/login', (req, resp)=>{
+  resp.render('loginUser');
+});
 app.post('/login', (req, resp)=>{
   console.log(req.body);
   if(req.body.username === 'admin' && req.body.password === password){
@@ -51,15 +64,32 @@ app.post('/login', (req, resp)=>{
 
 app.listen(port, ()=>{
     console.log(`Listening on port: ${port}`);
-    console.log(path.join(__dirname, '/checker.js'));
-    fs.readFile(path.join(__dirname, '/checker.js'), 'utf8', (err, data)=>{
-      if(err) console.error(err);
-      let newData = data + `\nif(window.document){window.document.getElementById('password').setAttriute('onkeydown') = checker('${password}');}`;
-      fs.writeFile(path.join(__dirname, '/checker.js'), newData, (err2)=>{
-        if (err2) console.error(err2);
-        console.log('Checker Set up');
-      });
-    });
+    // console.log(path.join(__dirname, '/checker.js'));
+
+    // fs.readFile(path.join(__dirname, '/checker.js'), 'utf8', (err, data)=>{
+    //   data = `${data}`;
+    //   if(err) console.error(err);
+    //   let newData = `function checker(password){
+    //     if(!document){
+    //       let document = {};
+    //     }
+    //     else{
+    //       if(password === document.getElementById('username').value()){
+    //         document.getElementById('submitter').setAttribute('class') = '';
+    //       }
+    //       else{
+    //         document.getElementById('submitter').setAttriute('class') = 'noShow';
+    //       }
+    //     }
+    //
+    //   }
+    //
+    //   if(window.document){window.document.getElementById('password').setAttriute('onkeydown') = checker('password');}`;
+    //   fs.writeFile(path.join(__dirname, '/checker.js'), newData, (err2)=>{
+    //     if (err2) console.error(err2);
+    //     console.log('Checker Set up');
+    //   });
+    // });
 });
 
 // module.exports = app;

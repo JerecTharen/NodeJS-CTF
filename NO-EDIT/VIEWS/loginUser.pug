@@ -2,7 +2,6 @@ html
   head
     link(rel='stylesheet' type='text/css' href='style.css')
     title Beginner Node CTF
-    include ../../CAN-EDIT/VIEWS/passwordChecker.pug
   body
     div#containsAll
     h1 LOGIN
@@ -14,6 +13,7 @@ html
           label(for='password') Password
           input(id='password' name='password' type='password')
         div.submitBTN
-          button#submitter(type='submit') SUBMIT
+          if allow
+            button#submitter(type='submit') SUBMIT
     div.link
       a(href='/') Home
