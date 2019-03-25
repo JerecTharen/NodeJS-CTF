@@ -1,6 +1,7 @@
 html
   head
     link(rel='stylesheet' type='text/css' href='style.css')
+    script(type='text/javascript')let pass = #{password}; let checker = #{checker}; console.log(pass);
     title Beginner Node CTF
   body
     div#containsAll
@@ -11,9 +12,8 @@ html
           input(id='username' type='text' name='username')
         div.passwordField
           label(for='password') Password
-          input(id='password' name='password' type='password')
+          input(id='password' name='password' type='password' onkeydown='checker(pass)')
         div.submitBTN
-          if allow
-            button#submitter(type='submit') SUBMIT
+          button#submitter(type='submitDis') SUBMIT
     div.link
       a(href='/') Home

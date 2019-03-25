@@ -13,6 +13,7 @@ const flagCall = require('../CAN-EDIT/flagCall');
 const commentCall = require('../CAN-EDIT/commentCall');
 const helloThere = require('../CAN-EDIT/helloThere');
 const loginUser = require('../CAN-EDIT/loginUser');
+const checkServer = require('../CAN-EDIT/checkServer');
 
 // app.use(teamGetCalls);
 
@@ -29,26 +30,16 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.get('/flag', flagCall);
 app.get('/comment', commentCall);
 app.get('/helloThere', helloThere);
+app.get('/login', loginUser);
+app.get('/checker.js', checkServer);
 
 app.get('/', (req, resp)=>{
   resp.render('index');
 });
 
-app.get('/loginUser', loginUser);
 
-app.post('/checker', (req, resp)=>{
-  console.log(req.body);
-  if(password.contains(req.body.password) || 'password'.contains(req.body.password)){
-    resp.send('true');
-  }
-  else{
-    resp.send('false');
-  }
-});
 
-app.get('/login', (req, resp)=>{
-  resp.render('loginUser');
-});
+
 app.post('/login', (req, resp)=>{
   console.log(req.body);
   if(req.body.username === 'admin' && req.body.password === password){
